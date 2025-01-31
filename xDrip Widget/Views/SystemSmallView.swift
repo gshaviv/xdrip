@@ -62,25 +62,21 @@ extension XDripWidget.EntryView {
                 if !entry.widgetState.forceStandByBigNumbers {
                     // this is the standard standby view
                     HStack(alignment: .center) {
+                        if let lastDate = entry.widgetState.bgReadingDates?.first {
+                            Text(lastDate, style: .timer)
+                                .foregroundStyle(isAtNight() ? .white : entry.widgetState.deltaChangeTextColor())
+                                .contentTransition(.numericText())
+                                .font(.body.bold())
+                        }
+                        
+                        Spacer()
+                        
                         Text("\(entry.widgetState.bgValueStringInUserChosenUnit())\(entry.widgetState.trendArrow())")
                             .font(.largeTitle).fontWeight(.bold)
                             .foregroundStyle(isAtNight() ? .white : entry.widgetState.bgTextColor())
                             .lineLimit(1)
                             .minimumScaleFactor(0.5)
-                        
-                        Spacer()
-                        
-                        if let deviceStatusIconImage = entry.widgetState.deviceStatusIconImage(), let deviceStatusColor = entry.widgetState.deviceStatusColor() {
-                            deviceStatusIconImage
-                                .font(.title3).bold()
-                                .foregroundStyle(isAtNight() ? .white : deviceStatusColor)
-                        } else {
-                            Text(entry.widgetState.deltaChangeStringInUserChosenUnit())
-                                .font(.title2).fontWeight(.bold)
-                                .foregroundStyle(isAtNight() ? .white : entry.widgetState.deltaChangeTextColor())
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.5)
-                        }
+
                     }
                     .padding(.top, 0)
                     .padding(.bottom, 2)
