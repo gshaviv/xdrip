@@ -228,6 +228,7 @@
 		D4E499AB277B43E3000F8CBA /* TreatmentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E499AA277B43E3000F8CBA /* TreatmentCollection.swift */; };
 		D4E499AD277B4CE7000F8CBA /* DateOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E499AC277B4CE7000F8CBA /* DateOnly.swift */; };
 		D4FD899727772F9100689788 /* TreatmentEntryAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD899627772F9100689788 /* TreatmentEntryAccessor.swift */; };
+		E45027912D215FB50027896B /* GlucoseIntentResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45027902D215FB50027896B /* GlucoseIntentResponseView.swift */; };
 		E4C006212B3DE8EC00D59303 /* GlucoseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C006202B3DE8EC00D59303 /* GlucoseIntent.swift */; };
 		F227BF192B9DF76D00CEEAAD /* SettingsViewContactImageSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F227BF182B9DF76D00CEEAAD /* SettingsViewContactImageSettingsViewModel.swift */; };
 		F227BF1C2B9E426B00CEEAAD /* ContactImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F227BF1B2B9E426B00CEEAAD /* ContactImageManager.swift */; };
@@ -1083,6 +1084,7 @@
 		D4E499AA277B43E3000F8CBA /* TreatmentCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentCollection.swift; sourceTree = "<group>"; };
 		D4E499AC277B4CE7000F8CBA /* DateOnly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOnly.swift; sourceTree = "<group>"; };
 		D4FD899627772F9100689788 /* TreatmentEntryAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatmentEntryAccessor.swift; sourceTree = "<group>"; };
+		E45027902D215FB50027896B /* GlucoseIntentResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseIntentResponseView.swift; sourceTree = "<group>"; };
 		E4C006202B3DE8EC00D59303 /* GlucoseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseIntent.swift; sourceTree = "<group>"; };
 		E4D530622B418FF80018C6A4 /* AppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShortcuts.swift; sourceTree = "<group>"; };
 		F227BF182B9DF76D00CEEAAD /* SettingsViewContactImageSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewContactImageSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -2229,6 +2231,7 @@
 			children = (
 				E4D530622B418FF80018C6A4 /* AppShortcuts.swift */,
 				E4C006202B3DE8EC00D59303 /* GlucoseIntent.swift */,
+				E45027902D215FB50027896B /* GlucoseIntentResponseView.swift */,
 			);
 			name = AppIntents;
 			sourceTree = "<group>";
@@ -4678,6 +4681,7 @@
 				F8A2BC0425DB093B001D1E78 /* Atom+CoreDataClass.swift in Sources */,
 				F8F9722823A5915900C3F17D /* BluconUtilities.swift in Sources */,
 				F8F9724723A69A8000C3F17D /* BluetoothPeripheralCategory.swift in Sources */,
+				E45027912D215FB50027896B /* GlucoseIntentResponseView.swift in Sources */,
 				F8B3A79522635A25004BA588 /* AlertType+CoreDataProperties.swift in Sources */,
 				F8A2BBFD25D9D386001D1E78 /* AtomBluetoothPeripheralViewModel.swift in Sources */,
 				F8AF11FA24B1FB3500AE5BA2 /* DexcomError.swift in Sources */,
