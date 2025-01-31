@@ -64,9 +64,10 @@ extension XDripWidget.EntryView {
                     HStack(alignment: .center) {
                         if let lastDate = entry.widgetState.bgReadingDates?.first {
                             Text(lastDate, style: .timer)
-                                .foregroundStyle(isAtNight() ? .white : entry.widgetState.deltaChangeTextColor())
                                 .contentTransition(.numericText())
+                                .monospacedDigit()
                                 .font(.body.bold())
+                                .foregroundStyle(isAtNight() ? .white : entry.widgetState.deltaChangeTextColor())
                         }
                         
                         Spacer()
