@@ -102,7 +102,7 @@ struct LiveActivityView: View {
         } else if context.state.liveActivityType == .minimal {
             // 1 = minimal widget with no chart
             HStack(alignment: .center) {
-                Text("\(context.state.bgValueStringInUserChosenUnit) \(context.state.trendArrow())")
+                Text("\(context.state.bgValueStringInUserChosenUnit()) \(context.state.trendArrow())")
                     .font(.system(size: 35)).bold()
                     .foregroundStyle(context.state.bgTextColor())
                     .minimumScaleFactor(0.1)
