@@ -622,13 +622,13 @@ public class AlertManager:NSObject {
             // after testing, the notification seems much clearer if we just use a single title line and include both title + body
             // we'll put an emoji prefix just to give the notification a bit more character
             if let alertTitle = alertTitle, let alertBody = alertBody {
-                content.title = alertKind.alertUrgencyType().alertTitlePrefix + " " + alertTitle.uppercased() + " " + alertBody
+                content.title = alertKind.alertUrgencyType().alertTitlePrefix + " " + alertTitle + ", " + alertBody
             }
             
             // now let's start creating the custom content
             var alertNotificationDictionary = AlertNotificationDictionary()
             
-            alertNotificationDictionary.alertTitle = alertKind.alertTitle().uppercased()
+            alertNotificationDictionary.alertTitle = alertKind.alertTitle()
             alertNotificationDictionary.alertUrgencyTypeRawValue = alertKind.alertUrgencyType().rawValue
             
             // create two simple arrays to send to the live activiy. One with the bg values in mg/dL and another with the corresponding timestamps

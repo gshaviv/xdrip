@@ -443,9 +443,7 @@ public enum AlertKind:Int, CaseIterable {
     /// - Returns: the type of alert (i.e. if urgent, notUrgent etc)
     func alertUrgencyType() -> AlertUrgencyType {
         switch self {
-        case .verylow, .veryhigh, .fastdrop:
-            return .urgent
-        case .low, .high, .fastrise:
+        case .verylow, .veryhigh, .fastdrop, .low, .high, .fastrise:
             return .warning
         default:
             return .normal
@@ -476,15 +474,5 @@ fileprivate func createAlertTitleForBgReadingAlerts(alertKind: AlertKind) -> Str
 
 // specifically for high, low, very high, very low because these need to show an alert body with the BG value etc
 fileprivate func createAlertBodyForBgReadingAlerts(bgReading:BgReading, alertKind:AlertKind) -> String {
-    var returnValue:String = ""
-    
-    // add unit
-    returnValue = returnValue + " " + bgReading.calculatedValue.mgDlToMmolAndToString(mgDl: UserDefaults.standard.bloodGlucoseUnitIsMgDl)
-    
-    // add slopeArrow
-    if !bgReading.hideSlope {
-        returnValue = returnValue + " " + bgReading.slopeArrow()
-    }
-    
-    return returnValue
+    bgReading.calculatedValue.mgDlToMmolAndToString(mgDl: UserDefaults.standard.bloodGlucoseUnitIsMgDl)
 }

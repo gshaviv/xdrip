@@ -1,9 +1,9 @@
 "alertsettingsview_screentitle" = "Alarms";
 "alertssettingsview_screentitle" = "Edit Alarm";
-"alerts_highalerttitle" = "High Alarm";
-"alerts_veryhighalerttitle" = "Very High Alarm";
-"alerts_lowalerttitle" = "Low Alarm";
-"alerts_verylowalerttitle" = "Very Low Alarm";
+"alerts_highalerttitle" = "High glucose";
+"alerts_veryhighalerttitle" = "Very High glucose";
+"alerts_lowalerttitle" = "Low glucose";
+"alerts_verylowalerttitle" = "Very Low glucose";
 "alerts_snooze" = "Snooze";
 "alerts_select_snooze_time" = "Select Snooze Time";
 "alerts_missedreadingalerttitle" = "Missed Readings";

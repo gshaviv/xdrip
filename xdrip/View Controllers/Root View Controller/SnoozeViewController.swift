@@ -248,7 +248,7 @@ extension SnoozeViewController: UITableViewDataSource {
             fatalError("In titleForHeaderInSection, could not create alertKind")
         }
         
-        return (alertKind.alertUrgencyType() == .urgent ? "\u{2757}" : "") + alertKind.alertTitle()
+        return alertKind.alertTitle()
         
     }
     
