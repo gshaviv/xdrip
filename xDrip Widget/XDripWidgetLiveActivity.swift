@@ -16,7 +16,7 @@ struct XDripWidgetLiveActivity: Widget {
             LiveActivityView(context: context)
         } dynamicIsland: { context in
             DynamicIsland {
-                DynamicIslandExpandedRegion(.leading) { Text("\(context.state.bgValueStringInUserChosenUnit)\(context.state.trendArrow())")
+                DynamicIslandExpandedRegion(.leading) { Text("\(context.state.bgValueStringInUserChosenUnit())\(context.state.trendArrow())")
                     .font(.largeTitle).bold()
                     .foregroundStyle(context.state.bgTextColor())
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -43,7 +43,7 @@ struct XDripWidgetLiveActivity: Widget {
                     GlucoseChartView(glucoseChartType: .dynamicIsland, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: nil, hoursToShowScalingHours: nil, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: nil, highContrast: nil)
                 }
             } compactLeading: {
-                Text("\(context.state.bgValueStringInUserChosenUnit)\(context.state.trendArrow())")
+                Text("\(context.state.bgValueStringInUserChosenUnit())\(context.state.trendArrow())")
                     .foregroundStyle(context.state.bgTextColor())
                     .minimumScaleFactor(0.1)
             } compactTrailing: {
@@ -51,7 +51,7 @@ struct XDripWidgetLiveActivity: Widget {
                     .foregroundStyle(context.state.deltaChangeTextColor())
                     .minimumScaleFactor(0.1)
             } minimal: {
-                Text("\(context.state.bgValueStringInUserChosenUnit)")
+                Text("\(context.state.bgValueStringInUserChosenUnit())")
                     .foregroundStyle(context.state.bgTextColor())
                     .minimumScaleFactor(0.1)
             }
@@ -73,8 +73,8 @@ struct LiveActivityView: View {
 
                 VStack(alignment: .center) {
                     HStack(alignment: .bottom) {
-                        Text(context.state.bgValueStringInUserChosenUnit)
-                            .contentTransition(.numericText(value: Double(context.state.bgValueStringInUserChosenUnit) ?? 0))
+                        Text(context.state.bgValueStringInUserChosenUnit())
+                            .contentTransition(.numericText(value: Double(context.state.bgValueStringInUserChosenUnit()) ?? 0))
 
                         Text(context.state.trendArrow())
                     }
@@ -143,7 +143,7 @@ struct LiveActivityView: View {
             // 0 = normal size chart
             HStack(spacing: 30) {
                 VStack(spacing: 0) {
-                    Text("\(context.state.bgValueStringInUserChosenUnit)\(context.state.trendArrow())")
+                    Text("\(context.state.bgValueStringInUserChosenUnit())\(context.state.trendArrow())")
                         .font(.system(size: 44)).bold()
                         .foregroundStyle(context.state.bgTextColor())
                         .minimumScaleFactor(0.1)
@@ -206,8 +206,8 @@ struct LiveActivityView: View {
                         .contentTransition(.numericText())
 
                     Group {
-                        Text(context.state.bgValueStringInUserChosenUnit)
-                            .contentTransition(.numericText(value: Double(context.state.bgValueStringInUserChosenUnit) ?? 0))
+                        Text(context.state.bgValueStringInUserChosenUnit())
+                            .contentTransition(.numericText(value: Double(context.state.bgValueStringInUserChosenUnit()) ?? 0))
 
                         Text(context.state.trendArrow())
                     }
@@ -284,7 +284,7 @@ struct XDripWidgetLiveActivity_Previews: PreviewProvider {
 
     static let attributes = XDripWidgetAttributes()
 
-    static let contentState = XDripWidgetAttributes.ContentState(bgReadingValues: bgValueArray(), bgReadingDates: bgDateArray(), isMgDl: true, slopeOrdinal: 5, deltaValueInUserUnit: -2, urgentLowLimitInMgDl: 70, lowLimitInMgDl: 80, highLimitInMgDl: 140, urgentHighLimitInMgDl: 180, liveActivityType: .large, dataSourceDescription: "Dexcom G6")
+    static let contentState = XDripWidgetAttributes.ContentState(bgReadingValues: bgValueArray(), bgReadingDates: bgDateArray(), isMgDl: true, slopeOrdinal: 5, deltaValueInUserUnit: -2, urgentLowLimitInMgDl: 70, lowLimitInMgDl: 80, highLimitInMgDl: 140, urgentHighLimitInMgDl: 180, liveActivityType: .large, dataSourceDescription: "Dexcom G6", deviceStatusCreatedAt: nil, deviceStatusLastLoopDate: nil)
 
     static var previews: some View {
         attributes
