@@ -27,8 +27,9 @@ struct GlucoseChartView: View {
     let chartHeight: Double
     let chartWidth: Double
     let showHighContrast: Bool
+    let needFrame: Bool
     
-    init(glucoseChartType: GlucoseChartType, bgReadingValues: [Double]?, bgReadingDates: [Date]?, isMgDl: Bool, urgentLowLimitInMgDl: Double, lowLimitInMgDl: Double, highLimitInMgDl: Double, urgentHighLimitInMgDl: Double, liveActivityType: LiveActivityType?, hoursToShowScalingHours: Double?, glucoseCircleDiameterScalingHours: Double?, overrideChartHeight: Double?, overrideChartWidth: Double?, highContrast: Bool?) {
+    init(glucoseChartType: GlucoseChartType, bgReadingValues: [Double]?, bgReadingDates: [Date]?, isMgDl: Bool, urgentLowLimitInMgDl: Double, lowLimitInMgDl: Double, highLimitInMgDl: Double, urgentHighLimitInMgDl: Double, liveActivityType: LiveActivityType?, hoursToShowScalingHours: Double?, glucoseCircleDiameterScalingHours: Double?, overrideChartHeight: Double?, overrideChartWidth: Double?, highContrast: Bool?, needFrame: Bool = true) {
         
         self.chartType = glucoseChartType
         self.isMgDl = isMgDl
@@ -38,6 +39,7 @@ struct GlucoseChartView: View {
         self.urgentHighLimitInMgDl = urgentHighLimitInMgDl
         self.liveActivityType = liveActivityType ?? .normal
         self.showHighContrast = highContrast ?? false
+        self.needFrame = needFrame
         
         // here we want to automatically set the hoursToShow based upon the chart type, but some chart instances might need
         // this to be overriden such as for zooming in/out of the chart (i.e. the Watch App)
@@ -206,15 +208,13 @@ struct GlucoseChartView: View {
                 }
             }
         }
-        .if({ return chartType.frame() ? true : false }()) { view in 
+        .if({ chartType.frame() && needFrame }()) { view in
             view.frame(width: chartWidth, height: chartHeight)
         }
-        .if({ return chartType.aspectRatio().enable ? true : false }()) { view in
+        .if({ chartType.aspectRatio().enable }()) { view in
             view.aspectRatio(chartType.aspectRatio().aspectRatio, contentMode: chartType.aspectRatio().contentMode)
         }
-        .if({ return chartType.padding().enable ? true : false }()) { view in 
-            view.padding(chartType.padding().padding)
-        }
+        .padding(chartType.padding().padding)
         .chartYAxis(chartType.yAxisShowLabels())
         .chartYScale(domain: domain)
         .background(chartType.backgroundColor())

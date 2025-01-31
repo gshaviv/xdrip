@@ -45,7 +45,7 @@ enum ConstantsGlucoseChartSwiftUI {
     // live activity (large)
     static let viewWidthLiveActivityLarge: CGFloat = 340
     static let viewHeightLiveActivityLarge: CGFloat = 80
-    static let hoursToShowLiveActivityLarge: Double = 8
+    static let hoursToShowLiveActivityLarge: Double = 4
     static let glucoseCircleDiameterLiveActivityLarge: Double = 24
     
     // dynamic island bottom (expanded)

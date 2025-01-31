@@ -117,6 +117,8 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>WKSupportsLiveActivityLaunchAttributeTypes</key>
+	<array/>
 	<key>view controller-based status bar</key>
 	<false/>
 </dict>
