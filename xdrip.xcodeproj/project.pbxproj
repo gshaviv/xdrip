@@ -5446,7 +5446,7 @@
 				INFOPLIST_FILE = "xDrip Widget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "$(MAIN_APP_DISPLAY_NAME)";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Johan Degraeve. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5482,7 +5482,7 @@
 				INFOPLIST_FILE = "xDrip Widget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "$(MAIN_APP_DISPLAY_NAME)";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Johan Degraeve. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5532,7 +5532,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -5568,7 +5568,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -5609,7 +5609,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -5649,7 +5649,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -5670,7 +5670,7 @@
 				INFOPLIST_FILE = "xDrip Notification Context Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "$(MAIN_APP_DISPLAY_NAME)";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Johan Degraeve. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5685,6 +5685,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -5705,7 +5706,7 @@
 				INFOPLIST_FILE = "xDrip Notification Context Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "$(MAIN_APP_DISPLAY_NAME)";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Johan Degraeve. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5719,6 +5720,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -5865,7 +5867,7 @@
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = "$(XDRIP_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = "xdrip/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5895,7 +5897,7 @@
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = "$(XDRIP_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = "xdrip/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
