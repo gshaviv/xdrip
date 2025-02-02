@@ -71,7 +71,7 @@ struct LiveActivityView: View {
             ZStack {
                 GlucoseChartView(glucoseChartType: .dynamicIsland, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: nil, hoursToShowScalingHours: 3, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: 160, highContrast: nil, needFrame: false)
 
-                VStack(alignment: .center) {
+                VStack(alignment: .leading) {
                     HStack(alignment: .bottom) {
                         Text(context.state.bgValueStringInUserChosenUnit())
                             .contentTransition(.numericText(value: Double(context.state.bgValueStringInUserChosenUnit()) ?? 0))
@@ -84,11 +84,7 @@ struct LiveActivityView: View {
                     .opacity(0.75)
 
                     Spacer()
-                }
-                .padding(EdgeInsets(top: 4, leading: 8, bottom: 0, trailing: 0))
-                
-                VStack(alignment: .leading) {
-                    Spacer()
+               
                     if let lastDate = context.state.bgReadingDates.first {
                         Text(lastDate, style: .timer)
                             .foregroundStyle(.gray)
@@ -96,7 +92,7 @@ struct LiveActivityView: View {
                             .font(.callout.bold())
                     }
                 }
-                .padding(EdgeInsets(top: 0, leading: 8, bottom: 4, trailing: 0))
+                .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
             }
         } else if context.state.liveActivityType == .minimal {
             // 1 = minimal widget with no chart
