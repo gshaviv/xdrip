@@ -69,7 +69,7 @@ struct LiveActivityView: View {
     var body: some View {
         if activityFamily == .small {
             ZStack {
-                GlucoseChartView(glucoseChartType: .dynamicIsland, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: nil, hoursToShowScalingHours: 2, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: 160, highContrast: nil, needFrame: false)
+                GlucoseChartView(glucoseChartType: .dynamicIsland, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: nil, hoursToShowScalingHours: 3, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: 160, highContrast: nil, needFrame: false)
 
                 VStack(alignment: .center) {
                     HStack(alignment: .bottom) {
@@ -94,7 +94,6 @@ struct LiveActivityView: View {
                             .foregroundStyle(.gray)
                             .contentTransition(.numericText())
                             .font(.callout.bold())
-                            .opacity(0.75)
                     }
                 }
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 4, trailing: 0))
