@@ -59,9 +59,14 @@ extension XDripWidget.EntryView {
                 
                 Spacer()
                 
-                Text("Last reading at \(entry.widgetState.bgReadingDate?.formatted(date: .omitted, time: .shortened) ?? "--:--")")
-                    .font(.caption)
-                    .foregroundStyle(.colorTertiary)
+                if let lastDate = entry.widgetState.bgReadingDates?.first {
+                    Text(lastDate, style: .timer)
+                        .multilineTextAlignment(.trailing)
+                        .contentTransition(.numericText())
+                        .monospacedDigit()
+                        .font(.caption)
+                        .foregroundStyle(.colorTertiary)
+                }
             }
             .padding(.top, 10)
         }

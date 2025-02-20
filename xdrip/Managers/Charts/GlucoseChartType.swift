@@ -187,7 +187,7 @@ public enum GlucoseChartType: Int, CaseIterable {
     
     func frame() -> Bool {
         switch self {
-        case .siriGlucoseIntent:
+        case .siriGlucoseIntent, .widgetSystemMedium:
             return false
         default:
             return true

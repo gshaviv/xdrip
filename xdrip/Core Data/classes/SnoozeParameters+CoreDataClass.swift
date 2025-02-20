@@ -13,7 +13,7 @@ public class SnoozeParameters: NSManagedObject {
         let entity = NSEntityDescription.entity(forEntityName: "SnoozeParameters", in: nsManagedObjectContext)!
         super.init(entity: entity, insertInto: nsManagedObjectContext)
         
-        self.snoozePeriodInMinutes = snoozePeriodInMinutes
+        self.snoozePeriodInMinutes = min(snoozePeriodInMinutes,15)
         self.alertKind = Int16(alertKind.rawValue)
         self.snoozeTimeStamp = snoozeTimeStamp
 

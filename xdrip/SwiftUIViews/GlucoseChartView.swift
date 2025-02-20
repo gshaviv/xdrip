@@ -57,13 +57,12 @@ struct GlucoseChartView: View {
         self.bgReadingDates = []
         
         if let bgReadingValues = bgReadingValues, let bgReadingDates = bgReadingDates {
-            var index = 0
-            for _ in bgReadingValues {
-                if bgReadingDates[index] > Date().addingTimeInterval(-hoursToShow * 60 * 60) {
+            let cutoff = Date().addingTimeInterval(-hoursToShow * 60 * 60)
+            for index in 0 ..< bgReadingValues.count {
+                if bgReadingDates[index] > cutoff {
                     self.bgReadingValues.append(bgReadingValues[index])
                     self.bgReadingDates.append(bgReadingDates[index])
                 }
-                index += 1
             }
         }
     }
