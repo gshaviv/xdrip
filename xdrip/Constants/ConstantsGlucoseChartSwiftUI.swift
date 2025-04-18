@@ -21,7 +21,7 @@ enum ConstantsGlucoseChartSwiftUI {
     static let yAxisLowHighLineColor = Color(white: 0.7)
     static let yAxisUrgentLowHighLineColor = Color(white: 0.6)
     
-    static let xAxisGridLineColor = Color(white: 0.4)
+    static let xAxisGridLineColor = Color.white.opacity(0.5)
     static let xAxisLabelOffsetX: CGFloat = -12
     static let xAxisLabelOffsetY: CGFloat = -2
     static let xAxisIntervalBetweenValues: Int = 1
@@ -43,8 +43,8 @@ enum ConstantsGlucoseChartSwiftUI {
     static let glucoseCircleDiameterLiveActivityNormal: Double = 36
     
     // live activity (large)
-    static let viewWidthLiveActivityLarge: CGFloat = 340
-    static let viewHeightLiveActivityLarge: CGFloat = 80
+    static let viewWidthLiveActivityLarge: CGFloat = 400
+    static let viewHeightLiveActivityLarge: CGFloat = 140
     static let hoursToShowLiveActivityLarge: Double = 4
     static let glucoseCircleDiameterLiveActivityLarge: Double = 24
     

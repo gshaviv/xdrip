@@ -234,6 +234,8 @@
 		D4E499AB277B43E3000F8CBA /* TreatmentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E499AA277B43E3000F8CBA /* TreatmentCollection.swift */; };
 		D4E499AD277B4CE7000F8CBA /* DateOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E499AC277B4CE7000F8CBA /* DateOnly.swift */; };
 		D4FD899727772F9100689788 /* TreatmentEntryAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD899627772F9100689788 /* TreatmentEntryAccessor.swift */; };
+		E404A7272DAD426B00851113 /* ConstantsBGGraphBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1585022EDB597007F5B5D /* ConstantsBGGraphBuilder.swift */; };
+		E404A7282DAD426B00851113 /* ConstantsBGGraphBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1585022EDB597007F5B5D /* ConstantsBGGraphBuilder.swift */; };
 		E45027912D215FB50027896B /* GlucoseIntentResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45027902D215FB50027896B /* GlucoseIntentResponseView.swift */; };
 		E4C006212B3DE8EC00D59303 /* GlucoseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C006202B3DE8EC00D59303 /* GlucoseIntent.swift */; };
 		F227BF192B9DF76D00CEEAAD /* SettingsViewContactImageSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F227BF182B9DF76D00CEEAAD /* SettingsViewContactImageSettingsViewModel.swift */; };
@@ -4311,6 +4313,7 @@
 				474822462C01097D0052D4FB /* NotificationController.swift in Sources */,
 				47A6AC2B2B7D3DE30047A4BA /* GlucoseChartView.swift in Sources */,
 				47DE41B52B8693CB0041DA19 /* MainViewHeaderView.swift in Sources */,
+				E404A7272DAD426B00851113 /* ConstantsBGGraphBuilder.swift in Sources */,
 				47A6AC342B7D3E260047A4BA /* ConstantsBloodGlucose.swift in Sources */,
 				47EBE8A42CFB8F9C00BB09F5 /* MainViewAIDStatusView.swift in Sources */,
 				47A6AC2E2B7D3E170047A4BA /* Double.swift in Sources */,
@@ -4355,6 +4358,7 @@
 				4737758B2C14DD7000525B90 /* ConstantsBloodGlucose.swift in Sources */,
 				47976E372BFBB870005E86EC /* TextsAlerts.swift in Sources */,
 				47CD642D2BEBEB0E002BDA68 /* AlertUrgencyType.swift in Sources */,
+				E404A7282DAD426B00851113 /* ConstantsBGGraphBuilder.swift in Sources */,
 				4737758A2C14DD6300525B90 /* Double.swift in Sources */,
 				4734FF572BF13B9C00C7115A /* TextsCommon.swift in Sources */,
 				473775822C14D8C100525B90 /* NotificationView.swift in Sources */,

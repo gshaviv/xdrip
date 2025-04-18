@@ -68,8 +68,9 @@ struct LiveActivityView: View {
 
     var body: some View {
         if activityFamily == .small {
+            // watch
             ZStack {
-                GlucoseChartView(glucoseChartType: .dynamicIsland, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: nil, hoursToShowScalingHours: 2, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: 160, highContrast: nil, needFrame: false)
+                GlucoseChartView(glucoseChartType: .dynamicIsland, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: nil, hoursToShowScalingHours: 1.75, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: 160, highContrast: nil, needFrame: false)
 
                 VStack(alignment: .leading) {
                     HStack(alignment: .bottom) {
@@ -160,7 +161,7 @@ struct LiveActivityView: View {
                 }
 
                 ZStack {
-                    GlucoseChartView(glucoseChartType: .liveActivity, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: .normal, hoursToShowScalingHours: nil, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: nil, highContrast: nil)
+                    GlucoseChartView(glucoseChartType: .liveActivity, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: .normal, hoursToShowScalingHours: 3, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: nil, highContrast: nil)
 
                     if context.state.warnUserToOpenApp {
                         VStack(alignment: .center) {
@@ -182,40 +183,44 @@ struct LiveActivityView: View {
             .padding(.top, 10)
             .padding(.bottom, 10)
         } else {
-            // 3 = large chart is final default option
-            VStack(spacing: 0) {
-                HStack(alignment: .bottom) {
-                    if let lastDate = context.state.bgReadingDates.first {
-                        Text(lastDate, style: .timer)
-                            .font(.system(size: 24)).fontWeight(.bold)
-                            .foregroundStyle(.primary)
-                            .contentTransition(.numericText())
-                    }
-
-                    Spacer()
-
-                    Text(context.state.deltaChangeStringInUserChosenUnit())
-                        .font(.system(size: 28)).fontWeight(.semibold)
-                        .foregroundStyle(context.state.deltaChangeTextColor())
-                        .lineLimit(1)
-                        .contentTransition(.numericText())
-
-                    Group {
-                        Text(context.state.bgValueStringInUserChosenUnit())
-                            .contentTransition(.numericText(value: Double(context.state.bgValueStringInUserChosenUnit()) ?? 0))
-
-                        Text(context.state.trendArrow())
-                    }
-                    .font(.system(size: 32)).fontWeight(.bold)
-                    .foregroundStyle(context.state.bgTextColor())
-                    .scaledToFill()
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
-                }
-                .padding(EdgeInsets(top: 8, leading: 0, bottom: 2, trailing: 0))
-
+            // 3 = large chart is final default option. lock screen
+ 
                 ZStack {
-                    GlucoseChartView(glucoseChartType: .liveActivity, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: .large, hoursToShowScalingHours: nil, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: nil, highContrast: nil)
+                    GlucoseChartView(glucoseChartType: .liveActivity, bgReadingValues: context.state.bgReadingValues, bgReadingDates: context.state.bgReadingDates, isMgDl: context.state.isMgDl, urgentLowLimitInMgDl: context.state.urgentLowLimitInMgDl, lowLimitInMgDl: context.state.lowLimitInMgDl, highLimitInMgDl: context.state.highLimitInMgDl, urgentHighLimitInMgDl: context.state.urgentHighLimitInMgDl, liveActivityType: .large, hoursToShowScalingHours: 3, glucoseCircleDiameterScalingHours: nil, overrideChartHeight: nil, overrideChartWidth: nil, highContrast: nil, needFrame: false)
+                        .frame(height: 140)
+                        .overlay(alignment: .top) {
+                            VStack(spacing: 0) {
+                                HStack(alignment: .bottom) {
+                                    if let lastDate = context.state.bgReadingDates.first {
+                                        Text(lastDate, style: .timer)
+                                            .font(.system(size: 24)).fontWeight(.bold)
+                                            .foregroundStyle(.primary)
+                                            .contentTransition(.numericText())
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Text(context.state.deltaChangeStringInUserChosenUnit())
+                                        .font(.system(size: 28)).fontWeight(.semibold)
+                                        .foregroundStyle(context.state.deltaChangeTextColor())
+                                        .lineLimit(1)
+                                        .contentTransition(.numericText())
+                                    
+                                    Group {
+                                        Text(context.state.bgValueStringInUserChosenUnit())
+                                            .contentTransition(.numericText(value: Double(context.state.bgValueStringInUserChosenUnit()) ?? 0))
+                                        
+                                        Text(context.state.trendArrow())
+                                    }
+                                    .font(.system(size: 32)).fontWeight(.bold)
+                                    .foregroundStyle(context.state.bgTextColor())
+                                    .scaledToFill()
+                                    .minimumScaleFactor(0.5)
+                                    .lineLimit(1)
+                                }
+                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 2, trailing: 0))
+                            }
+                        }
                     if context.state.warnUserToOpenApp {
                         VStack(alignment: .center) {
                             Text("Please open \(ConstantsHomeView.applicationName)")
@@ -227,9 +232,10 @@ struct LiveActivityView: View {
                                 .cornerRadius(10)
                         }
                     }
+                    
+
                 }
                 .padding(.bottom, 8)
-            }
             .padding([.leading, .trailing], 15)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(0)
