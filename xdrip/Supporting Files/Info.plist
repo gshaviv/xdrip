@@ -48,6 +48,10 @@
 			<string>drip</string>
 		</dict>
 	</array>
+	<key>INIntentsRestrictedWhileLocked</key>
+	<array/>
+	<key>INIntentsRestrictedWhileProtectedDataUnavailable</key>
+	<array/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
