@@ -48,7 +48,7 @@ class CalendarManager: NSObject {
     private func createCalendarEvent(lastConnectionStatusChangeTimeStamp: Date?) {
         
         // check that access to calendar is authorized by the user
-        guard EKEventStore.authorizationStatus(for: .event) == .authorized else {
+        guard EKEventStore.authorizationStatus(for: .event) == .writeOnly else {
             trace("in createCalendarEvent, createCalendarEvent is enabled but access to calendar is not authorized, setting UserDefaults.standard.createCalendarEvent to false", log: log, category: ConstantsLog.categoryCalendarManager, type: .info)
             return
         }

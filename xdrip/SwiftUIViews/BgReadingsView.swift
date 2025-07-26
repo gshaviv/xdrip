@@ -107,7 +107,7 @@ struct BgReadingsView: View {
                 }
             }
             .navigationTitle(Texts_BgReadings.glucoseReadingsTitle)
-            .onChange(of: dateSelected, perform: { value in
+            .onChange(of: dateSelected) { _, value in
                 // update the filtered array with the newly selected date
                 filteredBgReadings = bgReadings.filter { Calendar.current.compare($0.timeStamp, to: dateSelected, toGranularity: .day) == .orderedSame}
                 
@@ -115,7 +115,7 @@ struct BgReadingsView: View {
                 
                 // hide the datePicker
                 self.datePickerReset = UUID()
-            })
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(Texts_Common.Cancel, action: {

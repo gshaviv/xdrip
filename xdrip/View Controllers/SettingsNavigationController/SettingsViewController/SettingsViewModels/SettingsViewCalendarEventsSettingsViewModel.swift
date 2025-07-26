@@ -282,7 +282,7 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
         if UserDefaults.standard.createCalendarEvent {
             
             // user may have removed the authorization, in that case set setting to false and return 1 row
-            if EKEventStore.authorizationStatus(for:.event) != .authorized {
+            if EKEventStore.authorizationStatus(for:.event) != .writeOnly {
                 
                 UserDefaults.standard.createCalendarEvent = false
                 

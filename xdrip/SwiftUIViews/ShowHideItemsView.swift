@@ -36,38 +36,38 @@ struct ShowHideItemsView: View {
                 List {
                     Section(header: Text("Home Screen"), footer: Text("Show or hide main home screen elements, useful when using smaller iPhone screen sizes")) {
                         Toggle(Texts_SettingsView.showMiniChart, isOn: $showMiniChart)
-                            .onChange(of: showMiniChart) { newValue in
+                            .onChange(of: showMiniChart) { _, newValue in
                                 UserDefaults.standard.showMiniChart = newValue
                             }
                         
                         Toggle(Texts_SettingsView.labelShowStatistics, isOn: $showStatistics)
-                            .onChange(of: showStatistics) { newValue in
+                            .onChange(of: showStatistics) { _, newValue in
                                 UserDefaults.standard.showStatistics = newValue
                             }
                     }
                     
                     Section(header: Text("Glucose Chart")) {
                         Toggle(Texts_SettingsView.settingsviews_showTreatmentsOnChart, isOn: $showTreatmentsOnChart)
-                            .onChange(of: showTreatmentsOnChart) { newValue in
+                            .onChange(of: showTreatmentsOnChart) { _, newValue in
                                 UserDefaults.standard.showTreatmentsOnChart = newValue
                             }
                     }
                     
                     Section(header: Text("StandBy Mode"), footer: Text("Changes how the StandBy mode will be displayed if activated in the iPhone settings")) {
                         Toggle(Texts_SettingsView.allowStandByHighContrast, isOn: $allowStandByHighContrast)
-                            .onChange(of: allowStandByHighContrast) { newValue in
+                            .onChange(of: allowStandByHighContrast) { _, newValue in
                                 UserDefaults.standard.allowStandByHighContrast = newValue
                             }
                         
                         Toggle(Texts_SettingsView.forceStandByBigNumbers, isOn: $forceStandByBigNumbers)
-                            .onChange(of: forceStandByBigNumbers) { newValue in
+                            .onChange(of: forceStandByBigNumbers) { _, newValue in
                                 UserDefaults.standard.forceStandByBigNumbers = newValue
                             }
                     }
                     
                     Section(header: Text("Additional Items")) {
                         Toggle(Texts_SettingsView.labelSpeakBgReadings, isOn: $speakReadings)
-                            .onChange(of: speakReadings) { newValue in
+                            .onChange(of: speakReadings) { _, newValue in
                                 UserDefaults.standard.speakReadings = newValue
                             }
                     }
