@@ -33,11 +33,9 @@ extension XDripWatchComplication.EntryView {
             }
             .gaugeStyle(.accessoryCircular)
             .tint(entry.widgetState.gaugeModel().gaugeGradient)
-            .widgetBackground(backgroundView: Color.clear)
         } else {
             Image("ComplicationIcon")
                 .resizable()
-                .widgetBackground(backgroundView: Color.clear)
         }
     }
 }

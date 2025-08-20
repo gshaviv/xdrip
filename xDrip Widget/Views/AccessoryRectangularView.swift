@@ -21,7 +21,6 @@ extension XDripWidget.EntryView {
                 .foregroundStyle(.primary)
                 .lineLimit(1)
         }
-        .widgetBackground(backgroundView: Color.black)
     }
 }
 

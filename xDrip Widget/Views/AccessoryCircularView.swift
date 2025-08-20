@@ -37,6 +37,5 @@ extension XDripWidget.EntryView {
             .gaugeStyle(.accessoryCircular)
             .tint(entry.widgetState.gaugeModel().gaugeGradient)
         }
-        .widgetBackground(backgroundView: Color.black)
     }
 }

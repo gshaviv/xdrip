@@ -96,6 +96,5 @@ extension XDripWatchComplication.EntryView {
                 }
             }
         }
-        .widgetBackground(backgroundView: Color.clear)
     }
 }

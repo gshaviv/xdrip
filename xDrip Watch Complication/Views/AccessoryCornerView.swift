@@ -37,14 +37,12 @@ extension XDripWatchComplication.EntryView {
                     .tint(entry.widgetState.gaugeModel().gaugeGradient)
                     .gaugeStyle(LinearCapacityGaugeStyle()) // Doesn't do anything
                 }
-                .widgetBackground(backgroundView: Color.clear)
         } else {
             Text(" ")
                 .font(.system(size: 20))
                 .minimumScaleFactor(0.2)
                 .widgetCurvesContent()
                 .widgetLabel("\(ConstantsHomeView.applicationName)")
-                .widgetBackground(backgroundView: Color.clear)
         }
     }
 }

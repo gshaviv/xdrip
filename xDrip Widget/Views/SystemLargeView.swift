@@ -70,7 +70,6 @@ extension XDripWidget.EntryView {
             }
             .padding(.top, 10)
         }
-        .widgetBackground(backgroundView: Color.black)
     }
 }
 

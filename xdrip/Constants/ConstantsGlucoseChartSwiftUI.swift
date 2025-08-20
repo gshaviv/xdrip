@@ -30,7 +30,7 @@ enum ConstantsGlucoseChartSwiftUI {
     
     static let cornerRadius: CGFloat = 0
     
-    static let backgroundColor: Color = .black
+    static let backgroundColor: Color = .clear
     
     
     // ------------------------------------------

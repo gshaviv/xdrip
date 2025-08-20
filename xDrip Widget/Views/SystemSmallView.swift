@@ -118,6 +118,5 @@ extension XDripWidget.EntryView {
                 }
             }
         }
-        .widgetBackground(backgroundView: Color.black)
     }
 }
