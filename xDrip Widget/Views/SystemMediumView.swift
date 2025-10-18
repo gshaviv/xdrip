@@ -52,13 +52,6 @@ extension XDripWidget.EntryView {
                 Spacer()
            
                 HStack(alignment: .center) {
-                    if let keepAliveImageString = entry.widgetState.keepAliveImageString {
-                        Image(systemName: keepAliveImageString)
-                            .font(.caption)
-                            .foregroundStyle(.colorTertiary)
-                            .padding(.trailing, -4)
-                    }
-                        
                     Text(entry.widgetState.dataSourceDescription)
                         .font(.caption).bold()
                         .foregroundStyle(.colorSecondary)
