@@ -5,15 +5,6 @@ class DexcomShareUploadManager:NSObject {
  
     // MARK: - private properties
     
-    /// path for login
-    private let loginPath = "/General/LoginPublisherAccountByName"
-    
-    /// path for upload readings
-    private let postReceiverEgvRecordsPath = "Publisher/PostReceiverEgvRecords"
-    
-    /// path for start remote monitoring session
-    private let startRemoteMonitoringSessionPath = "Publisher/StartRemoteMonitoringSession"
-    
     /// BgReadingsAccessor instance
     private let bgReadingsAccessor:BgReadingsAccessor
     
@@ -31,7 +22,7 @@ class DexcomShareUploadManager:NSObject {
         if UserDefaults.standard.useUSDexcomShareurl {
             return ConstantsDexcomShare.usBaseShareUrl
         } else {
-            return ConstantsDexcomShare.nonUsBaseShareUrl
+            return ConstantsDexcomShare.globalBaseShareUrl
         }
     }
     
@@ -72,13 +63,13 @@ class DexcomShareUploadManager:NSObject {
         
         // check if dexcomShare is enabled
         guard UserDefaults.standard.uploadReadingstoDexcomShare else {
-            trace("in upload, uploadReadingstoDexcomShare not enabled", log: self.log, category: ConstantsLog.categoryDexcomShareUploadManager, type: .info)
+            trace("in upload, uploadReadingstoDexcomShare not enabled", log: self.log, category: ConstantsLog.categoryDexcomShareUploadManager, type: .debug)
             return
         }
         
         // check if master is enabled
         guard UserDefaults.standard.isMaster else {
-            trace("in upload, not master, no upload", log: self.log, category: ConstantsLog.categoryDexcomShareUploadManager, type: .info)
+            trace("in upload, not master so nothing to upload", log: self.log, category: ConstantsLog.categoryDexcomShareUploadManager, type: .debug)
             return
         }
         
@@ -92,9 +83,7 @@ class DexcomShareUploadManager:NSObject {
         if UserDefaults.standard.dexcomShareUploadUseSchedule {
             if let schedule = UserDefaults.standard.dexcomShareUploadSchedule {
                 if !schedule.indicatesOn(forWhen: Date()) {
-                    
-                    trace("in upload, schedule indicates not on", log: self.log, category: ConstantsLog.categoryDexcomShareUploadManager, type: .info)
-                    
+                    trace("in upload, schedule indicates 'not on' so will not upload yet", log: self.log, category: ConstantsLog.categoryDexcomShareUploadManager, type: .info)
                     return
                 }
             }
@@ -102,7 +91,6 @@ class DexcomShareUploadManager:NSObject {
         
         // upload
         uploadBgReadingsToDexcomShare(firstAttempt: true, lastConnectionStatusChangeTimeStamp: lastConnectionStatusChangeTimeStamp)
-        
     }
 
     // MARK: - overriden functions
@@ -200,7 +188,7 @@ class DexcomShareUploadManager:NSObject {
             return
         }
         
-        let startRemoteMonitoringSessionUrl = url.appendingPathComponent(startRemoteMonitoringSessionPath)
+        let startRemoteMonitoringSessionUrl = url.appendingPathComponent(ConstantsDexcomShare.dexcomShareUploadStartRemoteMonitoringSessionPath)
         
         // create NSURLComponents instance with scheme, host, queryItems
         guard let components = NSURLComponents(url: startRemoteMonitoringSessionUrl, resolvingAgainstBaseURL: false) else {
@@ -550,7 +538,7 @@ class DexcomShareUploadManager:NSObject {
         }
             
         // create url
-        let testURL = url.appendingPathComponent(loginPath)
+        let testURL = url.appendingPathComponent(ConstantsDexcomShare.dexcomShareUploadLoginPath)
         
         // create the request
         var request = URLRequest(url: testURL)
@@ -613,7 +601,7 @@ class DexcomShareUploadManager:NSObject {
                         if let dexcomShareSessionId = decoded as? String {
 
                             // when giving random username/password, there's no error but dexcomShareSessionId equals "00000000-0000-0000-0000-000000000000", in that case create errorCode "SSO_AuthenticatePasswordInvalid"
-                            guard dexcomShareSessionId != "00000000-0000-0000-0000-000000000000" else {
+                            guard dexcomShareSessionId != ConstantsDexcomShare.failedSessionId else {
                                 
                                 completion(false, NSError(domain: "", code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: "SSO_AuthenticatePasswordInvalid"]))
                                 
@@ -733,7 +721,7 @@ class DexcomShareUploadManager:NSObject {
             trace("in createURLRequestForUploadBgReadings, failed to create url", log: log, category: ConstantsLog.categoryDexcomShareUploadManager, type: .error)
             return nil
         }
-        let postReceiverEgvRecordsUrl = url.appendingPathComponent(postReceiverEgvRecordsPath)
+        let postReceiverEgvRecordsUrl = url.appendingPathComponent(ConstantsDexcomShare.dexcomShareUploadPostReceiverEgvRecordsPath)
         
         // create NSURLComponents instance with scheme, host, queryItems
         guard let components = NSURLComponents(url: postReceiverEgvRecordsUrl, resolvingAgainstBaseURL: false) else {
